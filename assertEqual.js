@@ -11,7 +11,7 @@ const assertEqual = function(actual, expected) {
 assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual(1, 1);
 assertEqual(2, "2");
-assertEqual('string', 'string');
+
 
 /* 在 JavaScript 中，可以使用单引号（''）、双引号（""）或反引号（``）来创建字符串。然而，只有在使用反引号时，才可以在字符串中使用${}语法来插入变量或表达式的值。
 
