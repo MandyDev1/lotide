@@ -1,9 +1,28 @@
+const assert = require('chai').assert;
 const middle = require('../middle');
-const assertArraysEqual= require('../assertArraysEqual');
 
-assertArraysEqual(middle([1]), []); // Empty array for one element
-assertArraysEqual(middle([1, 2]), []); // Empty array for two elements
-assertArraysEqual(middle([1, 2, 3]), [2]); // Single middle element for odd number of elements
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // Single middle element for odd number of elements
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // Two middle elements for even number of elements
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // Two middle elements for even number of elements
+describe("#middle", () => {
+  it("returns [] for [1]", () => {
+    assert.deepEqual(middle([1]), []);
+  });
+
+  it("returns [] for [1, 2]", () => {
+    assert.deepEqual(middle([1, 2]), []);
+  });
+
+  it("returns [2] for [1, 2, 3]", () => {
+    assert.deepEqual(middle([1, 2, 3]), [2]);
+  });
+
+  it("returns [3] for [1, 2, 3, 4, 5]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5]), [3]);
+  });
+
+  it("returns [2, 3] for [1, 2, 3, 4]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4]), [2, 3]);
+  });
+
+  it("returns [3, 4] for [1, 2, 3, 4, 5, 6]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+  });
+});
